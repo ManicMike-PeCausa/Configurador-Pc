@@ -1,0 +1,276 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 76px; /* Para compensar el navbar fixed */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Secciones */
+.section {
+    padding: 60px 0;
+}
+
+/* Cards de funcionalidades */
+.feature-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .card-title {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+/* Tech badges */
+.tech-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 5px;
+    background-color: #e9ecef;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.tech-badge:hover {
+    background-color: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    padding: 15px 0;
+    border-left: 3px solid #667eea;
+    padding-left: 25px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #667eea;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #667eea;
+}
+
+.timeline-item h5 {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Code preview */
+.code-preview {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    overflow-x: auto;
+}
+
+.code-preview pre {
+    margin: 0;
+    font-size: 14px;
+}
+
+.code-preview code {
+    color: #333;
+    font-family: 'Courier New', monospace;
+}
+
+/* Cards de documentación */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card .card-title {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #667eea;
+    border-color: #667eea;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5a67d8;
+    border-color: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: #48bb78;
+    border-color: #48bb78;
+    padding: 12px 30px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #38a169;
+    border-color: #38a169;
+    transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #667eea !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+/* Alerts */
+.alert-info {
+    background-color: #e7f3ff;
+    border-color: #b8daff;
+    color: #004085;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .timeline-item {
+        margin-left: 10px;
+        padding-left: 20px;
+    }
+    
+    .tech-badge {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card, .card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Scroll smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Utilidades adicionales */
+.text-primary-custom {
+    color: #667eea !important;
+}
+
+.bg-primary-custom {
+    background-color: #667eea !important;
+}
+
+/* Mejoras para la sección de equipo */
+#equipo .card {
+    border: 2px solid #667eea;
+    padding: 20px;
+}
+
+#equipo .card h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+/* Estilo para los enlaces externos */
+a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 12px;
+    vertical-align: super;
+}

@@ -3,60 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Builder - Proyecto Integrado</title>
+    <title>Configurador PC - Proyecto Integrado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .section {
-            padding: 60px 0;
-        }
-        .feature-card {
-            transition: transform 0.3s;
-            height: 100%;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .tech-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            margin: 5px;
-            background-color: #e9ecef;
-            border-radius: 20px;
-        }
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-        .timeline-item {
-            padding: 10px 0;
-            border-left: 3px solid #667eea;
-            padding-left: 20px;
-            margin-left: 20px;
-        }
-        .code-preview {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-        }
-    </style>
+    <link href="estilos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">PC Builder</a>
+            <a class="navbar-brand" href="#">Configurador PC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,6 +22,7 @@
                     <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#desarrollo">Desarrollo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#documentacion">Documentación</a></li>
                     <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
                 </ul>
             </div>
@@ -76,12 +32,12 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
-            <h1 class="display-4 mb-4">PC Builder</h1>
-            <p class="lead mb-4">Configurador de PCs - Proyecto Integrado FP</p>
+            <h1 class="display-4 mb-4">Configurador PC</h1>
+            <p class="lead mb-4">Sistema de Configuración de PCs - Proyecto Integrado FP</p>
             <p>Aplicación de escritorio desarrollada en Java para la configuración y compra de componentes de PC</p>
             <div class="mt-4">
                 <a href="#proyecto" class="btn btn-light btn-lg me-3">Ver Proyecto</a>
-                <a href="https://github.com/tuusuario/PCBuilder" class="btn btn-outline-light btn-lg">GitHub</a>
+                <a href="https://github.com/ManicMike-PeCausa/Configurador-Pc/blob/main" class="btn btn-outline-light btn-lg" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
@@ -93,7 +49,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Descripción</h3>
-                    <p>PC Builder es una aplicación de escritorio desarrollada como proyecto integrado para el ciclo de FP. Permite a los usuarios configurar PCs personalizados seleccionando componentes compatibles.</p>
+                    <p>Configurador PC es una aplicación de escritorio desarrollada como proyecto integrado para el ciclo de FP. Permite a los usuarios configurar PCs personalizados seleccionando componentes compatibles.</p>
                     <p>El sistema incluye gestión de usuarios, validación de compatibilidad entre componentes y un panel de administración completo.</p>
                 </div>
                 <div class="col-md-6">
@@ -104,6 +60,8 @@
                         <li>Trabajar con bases de datos MySQL</li>
                         <li>Desarrollar interfaces gráficas con Swing</li>
                         <li>Usar control de versiones con Git</li>
+                        <li>Generar documentación automática con Javadoc</li>
+                        <li>Crear facturas en formato XML</li>
                     </ul>
                 </div>
             </div>
@@ -158,8 +116,8 @@
                 <div class="col-md-4">
                     <div class="card feature-card">
                         <div class="card-body text-center">
-                            <h4 class="card-title">🔍 Filtros</h4>
-                            <p class="card-text">Búsqueda de componentes por categorías</p>
+                            <h4 class="card-title">📄 Facturas XML</h4>
+                            <p class="card-text">Generación automática de facturas en formato XML</p>
                         </div>
                     </div>
                 </div>
@@ -204,12 +162,12 @@
 ├── modelo/
 │   ├── Usuario.java
 │   ├── Componente.java
-│   └── componenteDAO.java
+│   └── ComponenteDAO.java
 ├── vista/
-│   ├── loginFrame.java
-│   └── mainframe.java
+│   ├── LoginFrame.java
+│   └── MainFrame.java
 └── controlador/
-    └── maincontroller.java</code></pre>
+    └── MainController.java</code></pre>
                     </div>
                     <p>El proyecto sigue el patrón Modelo-Vista-Controlador para separar la lógica de negocio de la interfaz.</p>
                 </div>
@@ -217,8 +175,38 @@
         </div>
     </section>
 
+    <!-- Ejemplo de Factura XML -->
+    <section class="section bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4">Ejemplo de Factura XML Generada</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="code-preview">
+                        <pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;factura&gt;
+    &lt;fecha&gt;2025-05-26 22:33:23&lt;/fecha&gt;
+    &lt;componentes&gt;
+        &lt;componente&gt;
+            &lt;nombre&gt;AMD Ryzen 5 5600X&lt;/nombre&gt;
+            &lt;tipo&gt;Procesador&lt;/tipo&gt;
+            &lt;precio&gt;200.0&lt;/precio&gt;
+        &lt;/componente&gt;
+        &lt;componente&gt;
+            &lt;nombre&gt;Intel i3 10100F&lt;/nombre&gt;
+            &lt;tipo&gt;Procesador&lt;/tipo&gt;
+            &lt;precio&gt;90.0&lt;/precio&gt;
+        &lt;/componente&gt;
+    &lt;/componentes&gt;
+    &lt;total&gt;290,00&lt;/total&gt;
+&lt;/factura&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Tecnologías -->
-    <section class="section bg-light" id="tecnologias">
+    <section class="section" id="tecnologias">
         <div class="container">
             <h2 class="text-center mb-5">Tecnologías Utilizadas</h2>
             <div class="text-center">
@@ -227,4 +215,124 @@
                 <span class="tech-badge">MySQL</span>
                 <span class="tech-badge">JDBC</span>
                 <span class="tech-badge">Eclipse IDE</span>
-                <span class="tech-badge">Git/GitHub
+                <span class="tech-badge">Git/GitHub</span>
+                <span class="tech-badge">XML</span>
+                <span class="tech-badge">Javadoc</span>
+                <span class="tech-badge">HTML/CSS</span>
+                <span class="tech-badge">Bootstrap</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentación -->
+    <section class="section bg-light" id="documentacion">
+        <div class="container">
+            <h2 class="text-center mb-5">Documentación del Proyecto</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">📋 Especificación de Requisitos</h5>
+                            <p class="card-text">Documento detallado con los requisitos funcionales y no funcionales del sistema.</p>
+                            <a href="../2-Especificacion-Requisitos/ESPECIFICACION DE REQUISITOS.pdf" class="btn btn-primary" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">📐 Diagrama de Clases</h5>
+                            <p class="card-text">Diagrama UML completo mostrando la estructura del sistema.</p>
+                            <a href="../3-Diagramas/diagrama_clases_pcbuilder.html" class="btn btn-primary" target="_blank">Ver Diagrama</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">📅 Cronograma del Proyecto</h5>
+                            <p class="card-text">Diagrama de Gantt con la planificación temporal del proyecto.</p>
+                            <a href="../Cronograma-Kanban/gantt_pcbuilder.html" class="btn btn-primary" target="_blank">Ver Gantt</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">📚 Documentación Javadoc</h5>
+                            <p class="card-text">Documentación automática generada del código fuente.</p>
+                            <a href="../5-DocumentacionTecnica/doc/index.html" class="btn btn-primary" target="_blank">Ver Javadoc</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">🛠️ Uso del IDE</h5>
+                            <p class="card-text">Documentación sobre el uso de Eclipse IDE en el proyecto.</p>
+                            <a href="../5-DocumentacionTecnica/Documentación del Uso del IDE.pdf" class="btn btn-primary" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">🔧 Control de Versiones</h5>
+                            <p class="card-text">Gestión del proyecto con Git y GitHub.</p>
+                            <a href="../usoGit/Gestión de Versiones con Git y GitHub – Proyecto Final.pdf" class="btn btn-primary" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://github.com/ManicMike-PeCausa/Configurador-Pc/blob/main" class="btn btn-lg btn-success" target="_blank">
+                    <i class="bi bi-github"></i> Ver Repositorio en GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capturas -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Capturas de la Aplicación</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info text-center">
+                        <p>Las capturas de pantalla de la aplicación están disponibles en el repositorio de GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="section bg-light" id="equipo">
+        <div class="container">
+            <h2 class="text-center mb-5">Desarrollado Por</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>ManicMike</h4>
+                            <p class="text-muted">Estudiante de FP - Desarrollo de Aplicaciones</p>
+                            <p>Proyecto Integrado - Curso 2024/2025</p>
+                            <a href="https://github.com/ManicMike-PeCausa" class="btn btn-dark" target="_blank">GitHub Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2025 Configurador PC - Proyecto Integrado FP</p>
+            <p>Desarrollado con Java, MySQL y mucho ☕</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

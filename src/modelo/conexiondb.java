@@ -15,8 +15,8 @@ import java.sql.SQLException;
  * <b>Nota:</b> Las credenciales están codificadas directamente por simplicidad, pero en producción
  * se recomienda usar variables de entorno o un archivo de configuración externo.
  * 
- * @author  
- * @version 1.0
+ * @author  Abdelghaffar EL AKHDAR 
+ * @version 1.6
  * @since 2025
  */
 

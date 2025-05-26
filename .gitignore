@@ -1,0 +1,22 @@
+# Archivos de compilación
+*.class
+
+# Archivos de logs
+*.log
+
+# Archivos de paquetes
+*.jar
+*.war
+*.ear
+
+# Archivos y carpetas de Eclipse
+.classpath
+.project
+.settings/
+
+# Archivos y carpetas de IntelliJ
+.idea/
+*.iml
+
+# Credenciales de base de datos (ejemplo)
+src/modelo/conexiondb.java

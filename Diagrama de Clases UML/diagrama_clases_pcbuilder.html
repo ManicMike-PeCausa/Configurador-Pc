@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagrama de Clases - PC Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .diagram-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        .class-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            min-width: 1200px;
+        }
+        .package {
+            border: 2px solid #34495e;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            background-color: #ecf0f1;
+        }
+        .package-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .class {
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+        .class-name {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .class-attributes {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            background-color: #f8f9fa;
+        }
+        .class-methods {
+            padding: 10px;
+            background-color: #ffffff;
+        }
+        .attribute, .method {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        .private { color: #e74c3c; }
+        .public { color: #27ae60; }
+        .protected { color: #f39c12; }
+        .static { font-style: italic; }
+        .relationship {
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .legend-item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diagrama de Clases - Sistema PC Builder</h1>
+    
+    <div class="diagram-container">
+        <div class="class-diagram">
+            
+            <!-- Paquete Modelo -->
+            <div class="package">
+                <div class="package-title">📦 Paquete: modelo</div>
+                
+                <div class="class">
+                    <div class="class-name">Componente</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- id: int</div>
+                        <div class="attribute private">- nombre: String</div>
+                        <div class="attribute private">- descripcion: String</div>
+                        <div class="attribute private">- precio: double</div>
+                        <div class="attribute private">- stock: int</div>
+                        <div class="attribute private">- tipo: String</div>
+                        <div class="attribute private">- socket: String</div>
+                        <div class="attribute private">- tipoRam: String</div>
+                        <div class="attribute private">- potenciaRecomendada: Integer</div>
+                        <div class="attribute private">- tamanoPlaca: String</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ getId(): int</div>
+                        <div class="method public">+ setId(id: int): void</div>
+                        <div class="method public">+ getNombre(): String</div>
+                        <div class="method public">+ setNombre(nombre: String): void</div>
+                        <div class="method public">+ getPrecio(): double</div>
+                        <div class="method public">+ setPrecio(precio: double): void</div>
+                        <div class="method public">+ getStock(): int</div>
+                        <div class="method public">+ setStock(stock: int): void</div>
+                        <div class="method public">+ gettipo(): String</div>
+                        <div class="method public">+ getsocket(): String</div>
+                        <div class="method public">+ gettipoRam(): String</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">usuario</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- id: int</div>
+                        <div class="attribute private">- nombreUsuario: String</div>
+                        <div class="attribute private">- contrasena: String</div>
+                        <div class="attribute private">- creditos: double</div>
+                        <div class="attribute private">- rol: String</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ usuario(id, nombreUsuario, contrasena, creditos, rol)</div>
+                        <div class="method public">+ getId(): int</div>
+                        <div class="method public">+ getNombreUsuario(): String</div>
+                        <div class="method public">+ getCreditos(): double</div>
+                        <div class="method public">+ getRol(): String</div>
+                        <div class="method public">+ setCreditos(creditos: double): void</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">Carrito</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- componentes: List&lt;Componente&gt;</div>
+                        <div class="attribute private">- socketBase: String</div>
+                        <div class="attribute private">- tipoRamBase: String</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ agregarComponente(comp: Componente): boolean</div>
+                        <div class="method public">+ getComponentes(): List&lt;Componente&gt;</div>
+                        <div class="method public">+ vaciar(): void</div>
+                        <div class="method public">+ getTotal(): double</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">componenteDAO</div>
+                    <div class="class-attributes">
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public static">+ obtenerComponentesPorTipo(tipo: String): List&lt;Componente&gt;</div>
+                        <div class="method public static">+ obtenerTodosComponentes(): List&lt;Componente&gt;</div>
+                        <div class="method public static">+ agregarComponente(comp: Componente, tipoId: int): boolean</div>
+                        <div class="method public static">+ actualizarComponente(comp: Componente): boolean</div>
+                        <div class="method public static">+ actualizarStock(id: int, nuevoStock: int): boolean</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">conexiondb</div>
+                    <div class="class-attributes">
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public static">+ conectar(): Connection</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">ValidadorCompatibilidad</div>
+                    <div class="class-attributes">
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public static">+ esCompatible(c1: Componente, c2: Componente): boolean</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paquete Vista -->
+            <div class="package">
+                <div class="package-title">🖼️ Paquete: vista</div>
+                
+                <div class="class">
+                    <div class="class-name">loginFrame</div>
+                    <div class="class-attributes">
+                        <div class="attribute public">+ campoUsuario: JTextField</div>
+                        <div class="attribute public">+ campoContrasena: JPasswordField</div>
+                        <div class="attribute public">+ botonLogin: JButton</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ loginFrame()</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">mainframe</div>
+                    <div class="class-attributes">
+                        <div class="attribute public">+ comboTipo: JComboBox&lt;String&gt;</div>
+                        <div class="attribute public">+ tablaComponentes: JTable</div>
+                        <div class="attribute public">+ btnAgregarCarrito: JButton</div>
+                        <div class="attribute private">- carrito: List&lt;Componente&gt;</div>
+                        <div class="attribute private">- modeloTabla: DefaultTableModel</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ mainframe()</div>
+                        <div class="method public">+ setNombreUsuario(nombre: String): void</div>
+                        <div class="method public">+ setCreditos(creditos: double): void</div>
+                        <div class="method public">+ cargarComponentes(lista: List&lt;Componente&gt;): void</div>
+                        <div class="method public">+ agregarComponenteAlCarrito(comp: Componente): void</div>
+                        <div class="method public">+ getComboTipo(): JComboBox&lt;String&gt;</div>
+                        <div class="method public">+ getTablaComponentes(): JTable</div>
+                        <div class="method public">+ getBtnAgregarCarrito(): JButton</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">adminFrame</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- tabla: JTable</div>
+                        <div class="attribute private">- modeloTabla: DefaultTableModel</div>
+                        <div class="attribute private">- txtNombre: JTextField</div>
+                        <div class="attribute private">- txtPrecio: JTextField</div>
+                        <div class="attribute private">- txtStock: JTextField</div>
+                        <div class="attribute private">- comboTipo: JComboBox&lt;String&gt;</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ adminFrame()</div>
+                        <div class="method private">- crearTabla(): void</div>
+                        <div class="method private">- crearFormulario(): void</div>
+                        <div class="method private">- crearBotones(): void</div>
+                        <div class="method private">- agregar(): void</div>
+                        <div class="method private">- actualizar(): void</div>
+                        <div class="method private">- cargarDatos(): void</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paquete Controlador -->
+            <div class="package">
+                <div class="package-title">🎮 Paquete: controlador</div>
+                
+                <div class="class">
+                    <div class="class-name">logincontroller</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- loginFrame: loginFrame</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ logincontroller(frame: loginFrame)</div>
+                        <div class="method private">- autenticar(usuario: String, contrasena: String): void</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">maincontroller</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- vista: mainframe</div>
+                        <div class="attribute private">- usuario: usuario</div>
+                        <div class="attribute private">- mapeoTipos: Map&lt;String, String&gt;</div>
+                        <div class="attribute private">- componentesActuales: List&lt;Componente&gt;</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ maincontroller(usuario: usuario)</div>
+                        <div class="method private">- cargarComponentes(tipo: String): void</div>
+                        <div class="method private">- agregarAlCarrito(): void</div>
+                    </div>
+                </div>
+                
+                <div class="class">
+                    <div class="class-name">adminController</div>
+                    <div class="class-attributes">
+                        <div class="attribute private">- frame: adminFrame</div>
+                        <div class="attribute private">- admin: usuario</div>
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public">+ adminController(usuario: usuario)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Clase Principal -->
+            <div class="package">
+                <div class="package-title">🚀 Clase Principal</div>
+                <div class="class">
+                    <div class="class-name">main</div>
+                    <div class="class-attributes">
+                    </div>
+                    <div class="class-methods">
+                        <div class="method public static">+ main(args: String[]): void</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="relationship">
+            <h3>Relaciones entre Clases:</h3>
+            <p>🔗 <strong>logincontroller</strong> → utiliza → <strong>loginFrame</strong></p>
+            <p>🔗 <strong>logincontroller</strong> → crea → <strong>maincontroller</strong> | <strong>adminController</strong></p>
+            <p>🔗 <strong>maincontroller</strong> → utiliza → <strong>mainframe</strong></p>
+            <p>🔗 <strong>adminController</strong> → utiliza → <strong>adminFrame</strong></p>
+            <p>🔗 <strong>maincontroller</strong> → gestiona → <strong>usuario</strong></p>
+            <p>🔗 <strong>componenteDAO</strong> → utiliza → <strong>conexiondb</strong></p>
+            <p>🔗 <strong>componenteDAO</strong> → gestiona → <strong>Componente</strong></p>
+            <p>🔗 <strong>Carrito</strong> → contiene → <strong>Componente</strong> (1..*)</p>
+            <p>🔗 <strong>mainframe</strong> → contiene → <strong>Carrito</strong></p>
+        </div>
+        
+        <div class="legend">
+            <h3>Leyenda:</h3>
+            <div class="legend-item"><span class="public">+ Verde</span>: Métodos/Atributos públicos</div>
+            <div class="legend-item"><span class="private">- Rojo</span>: Métodos/Atributos privados</div>
+            <div class="legend-item"><span class="protected"># Naranja</span>: Métodos/Atributos protegidos</div>
+            <div class="legend-item"><span class="static">Cursiva</span>: Métodos estáticos</div>
+            <div class="legend-item">📦 Paquetes agrupan clases relacionadas</div>
+        </div>
+    </div>
+</body>
+</html>

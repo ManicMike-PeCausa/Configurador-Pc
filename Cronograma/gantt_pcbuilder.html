@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagrama de Gantt - PC Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .gantt-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .task-bar {
+            background-color: #3498db;
+            color: white;
+            padding: 4px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .phase-analysis { background-color: #e74c3c; }
+        .phase-design { background-color: #f39c12; }
+        .phase-implementation { background-color: #27ae60; }
+        .phase-testing { background-color: #8e44ad; }
+        .phase-documentation { background-color: #16a085; }
+        .phase-deployment { background-color: #2c3e50; }
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cronograma del Proyecto PC Builder</h1>
+    
+    <div class="gantt-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Duración</th>
+                    <th>Sem 1</th>
+                    <th>Sem 2</th>
+                    <th>Sem 3</th>
+                    <th>Sem 4</th>
+                    <th>Sem 5</th>
+                    <th>Sem 6</th>
+                    <th>Sem 7</th>
+                    <th>Sem 8</th>
+                    <th>Responsable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fase de Análisis -->
+                <tr>
+                    <td><strong>1. Análisis de Requisitos</strong></td>
+                    <td>1 semana</td>
+                    <td colspan="1"><div class="task-bar phase-analysis">100%</div></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Equipo completo</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;1.1 Requisitos funcionales</td>
+                    <td>3 días</td>
+                    <td><div class="task-bar phase-analysis">✓</div></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Analista</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;1.2 Requisitos no funcionales</td>
+                    <td>2 días</td>
+                    <td><div class="task-bar phase-analysis">✓</div></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Analista</td>
+                </tr>
+                
+                <!-- Fase de Diseño -->
+                <tr>
+                    <td><strong>2. Diseño del Sistema</strong></td>
+                    <td>1.5 semanas</td>
+                    <td></td>
+                    <td colspan="2"><div class="task-bar phase-design">100%</div></td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td>Arquitecto</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;2.1 Diagrama de clases</td>
+                    <td>3 días</td>
+                    <td></td>
+                    <td><div class="task-bar phase-design">✓</div></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Diseñador</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;2.2 Diseño de base de datos</td>
+                    <td>2 días</td>
+                    <td></td>
+                    <td><div class="task-bar phase-design">✓</div></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td>DBA</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;2.3 Diseño de interfaces</td>
+                    <td>3 días</td>
+                    <td></td><td></td>
+                    <td><div class="task-bar phase-design">✓</div></td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td>UI/UX</td>
+                </tr>
+                
+                <!-- Fase de Implementación -->
+                <tr>
+                    <td><strong>3. Implementación</strong></td>
+                    <td>3 semanas</td>
+                    <td></td><td></td><td></td>
+                    <td colspan="3"><div class="task-bar phase-implementation">100%</div></td>
+                    <td></td><td></td>
+                    <td>Desarrolladores</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;3.1 Modelo (clases Java)</td>
+                    <td>1 semana</td>
+                    <td></td><td></td><td></td>
+                    <td><div class="task-bar phase-implementation">✓</div></td>
+                    <td></td><td></td><td></td><td></td>
+                    <td>Backend Dev</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;3.2 Vista (interfaces Swing)</td>
+                    <td>1 semana</td>
+                    <td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-implementation">✓</div></td>
+                    <td></td><td></td><td></td>
+                    <td>Frontend Dev</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;3.3 Controlador (lógica)</td>
+                    <td>1 semana</td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-implementation">✓</div></td>
+                    <td></td><td></td>
+                    <td>Backend Dev</td>
+                </tr>
+                
+                <!-- Fase de Pruebas -->
+                <tr>
+                    <td><strong>4. Pruebas</strong></td>
+                    <td>1 semana</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-testing">100%</div></td>
+                    <td></td>
+                    <td>QA Team</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;4.1 Pruebas unitarias</td>
+                    <td>2 días</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-testing">✓</div></td>
+                    <td></td>
+                    <td>Testers</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;4.2 Pruebas de integración</td>
+                    <td>3 días</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-testing">✓</div></td>
+                    <td></td>
+                    <td>Testers</td>
+                </tr>
+                
+                <!-- Fase de Documentación -->
+                <tr>
+                    <td><strong>5. Documentación</strong></td>
+                    <td>1 semana</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="2"><div class="task-bar phase-documentation">En progreso</div></td>
+                    <td>Documentador</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;5.1 Javadoc</td>
+                    <td>2 días</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-documentation">✓</div></td>
+                    <td></td>
+                    <td>Desarrolladores</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;5.2 Manual de usuario</td>
+                    <td>3 días</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-documentation">50%</div></td>
+                    <td>Tech Writer</td>
+                </tr>
+                
+                <!-- Fase de Despliegue -->
+                <tr>
+                    <td><strong>6. Despliegue</strong></td>
+                    <td>3 días</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td><div class="task-bar phase-deployment">Pendiente</div></td>
+                    <td>DevOps</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color phase-analysis"></div>
+            <span>Análisis</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color phase-design"></div>
+            <span>Diseño</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color phase-implementation"></div>
+            <span>Implementación</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color phase-testing"></div>
+            <span>Pruebas</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color phase-documentation"></div>
+            <span>Documentación</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color phase-deployment"></div>
+            <span>Despliegue</span>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 15px; background: #ecf0f1; border-radius: 8px;">
+        <h3>Notas del proyecto:</h3>
+        <ul>
+            <li><strong>Metodología:</strong> Desarrollo en cascada con retroalimentación entre fases</li>
+            <li><strong>Herramientas utilizadas:</strong> Eclipse IDE, MySQL, Git/GitHub, Javadoc</li>
+            <li><strong>Equipo:</strong> 4 desarrolladores trabajando de forma colaborativa</li>
+            <li><strong>Estado actual:</strong> En fase de documentación (90% completado)</li>
+        </ul>
+    </div>
+</body>
+</html>

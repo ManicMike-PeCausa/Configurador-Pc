@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder - Proyecto Integrado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .tech-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 5px;
+            background-color: #e9ecef;
+            border-radius: 20px;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            padding: 10px 0;
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+        .code-preview {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">PC Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyecto">Proyecto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#desarrollo">Desarrollo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1 class="display-4 mb-4">PC Builder</h1>
+            <p class="lead mb-4">Configurador de PCs - Proyecto Integrado FP</p>
+            <p>Aplicación de escritorio desarrollada en Java para la configuración y compra de componentes de PC</p>
+            <div class="mt-4">
+                <a href="#proyecto" class="btn btn-light btn-lg me-3">Ver Proyecto</a>
+                <a href="https://github.com/tuusuario/PCBuilder" class="btn btn-outline-light btn-lg">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descripción del Proyecto -->
+    <section class="section" id="proyecto">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre el Proyecto</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Descripción</h3>
+                    <p>PC Builder es una aplicación de escritorio desarrollada como proyecto integrado para el ciclo de FP. Permite a los usuarios configurar PCs personalizados seleccionando componentes compatibles.</p>
+                    <p>El sistema incluye gestión de usuarios, validación de compatibilidad entre componentes y un panel de administración completo.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Objetivos</h3>
+                    <ul>
+                        <li>Aplicar conocimientos de programación en Java</li>
+                        <li>Implementar arquitectura MVC</li>
+                        <li>Trabajar con bases de datos MySQL</li>
+                        <li>Desarrollar interfaces gráficas con Swing</li>
+                        <li>Usar control de versiones con Git</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section class="section bg-light" id="funcionalidades">
+        <div class="container">
+            <h2 class="text-center mb-5">Funcionalidades Principales</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">👤 Gestión de Usuarios</h4>
+                            <p class="card-text">Sistema de login con roles diferenciados (cliente/administrador)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">🛒 Carrito de Compra</h4>
+                            <p class="card-text">Selección de componentes con cálculo automático del total</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">✅ Validación</h4>
+                            <p class="card-text">Verificación automática de compatibilidad entre componentes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">📊 Panel Admin</h4>
+                            <p class="card-text">Gestión completa de productos, precios y stock</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">💰 Sistema de Créditos</h4>
+                            <p class="card-text">Los usuarios tienen créditos para realizar compras</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">🔍 Filtros</h4>
+                            <p class="card-text">Búsqueda de componentes por categorías</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Desarrollo -->
+    <section class="section" id="desarrollo">
+        <div class="container">
+            <h2 class="text-center mb-5">Proceso de Desarrollo</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Fases del Proyecto</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>1. Análisis de Requisitos</h5>
+                            <p>Definición de funcionalidades y restricciones del sistema</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2. Diseño</h5>
+                            <p>Diagrama de clases y diseño de la base de datos</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>3. Implementación</h5>
+                            <p>Desarrollo del código siguiendo arquitectura MVC</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>4. Pruebas</h5>
+                            <p>Testing y corrección de errores</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>5. Documentación</h5>
+                            <p>Javadoc y documentación técnica</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Arquitectura MVC</h3>
+                    <div class="code-preview">
+                        <pre><code>src/
+├── modelo/
+│   ├── Usuario.java
+│   ├── Componente.java
+│   └── componenteDAO.java
+├── vista/
+│   ├── loginFrame.java
+│   └── mainframe.java
+└── controlador/
+    └── maincontroller.java</code></pre>
+                    </div>
+                    <p>El proyecto sigue el patrón Modelo-Vista-Controlador para separar la lógica de negocio de la interfaz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section class="section bg-light" id="tecnologias">
+        <div class="container">
+            <h2 class="text-center mb-5">Tecnologías Utilizadas</h2>
+            <div class="text-center">
+                <span class="tech-badge">Java 8+</span>
+                <span class="tech-badge">Swing</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">JDBC</span>
+                <span class="tech-badge">Eclipse IDE</span>
+                <span class="tech-badge">Git/GitHub
